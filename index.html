@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="icon" type="image/jpg" href="/favicon.png"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>.:mpove.github.io:.</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- INICIO CODIGO TITULO MOVIMIENTO -->
+<script type="text/JavaScript">
+    var repeat = 1                    // Si ponemos valor 0 sólo se repetirá unavez el movimiento
+    var title = document.title
+    var leng = title.length
+    var start = 1
+    function titlemove()
+    {
+       titl = title.substring(start, leng) + title.substring(0, start)
+       document.title=titl
+       start++
+       if (start==leng+1)
+       {
+          start=0
+          if (repeat==0) return
+       }
+       setTimeout("titlemove()",150)  // 150 es la velocidad de movimiento, se puede ampliar o reducir
+    }
+    if (document.title) titlemove()
+ </script>
 </head>
 <body>
     <div id="background"></div>
@@ -48,5 +70,6 @@
 </section>
 
     <script src="scripts.js"></script>
+    
 </body>
 </html>
