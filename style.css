@@ -66,6 +66,7 @@ section {
     color: #fff;
     padding: 20px;
     text-align: center;
+    flex-direction: column; /*AY, AY PROBLEMAS CON LOS BR AY, AY*/
 }
 
 #home {
