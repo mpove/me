@@ -8,25 +8,28 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- INICIO CODIGO TITULO MOVIMIENTO -->
-<script type="text/JavaScript">
-    var repeat = 1                    // Si ponemos valor 0 sólo se repetirá unavez el movimiento
-    var title = document.title
-    var leng = title.length
-    var start = 1
-    function titlemove()
-    {
-       titl = title.substring(start, leng) + title.substring(0, start)
-       document.title=titl
-       start++
-       if (start==leng+1)
-       {
-          start=0
-          if (repeat==0) return
-       }
-       setTimeout("titlemove()",150)  // 150 es la velocidad de movimiento, se puede ampliar o reducir
-    }
-    if (document.title) titlemove()
- </script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var repeat = 1;  // Número de repeticiones, 0 para infinito
+            var title = document.title;
+            var length = title.length;
+            var start = 1;
+    
+            function titleMove() {
+                var newTitle = title.substring(start, length) + title.substring(0, start);
+                document.title = newTitle;
+                start++;
+                if (start === length + 1) {
+                    start = 0;
+                    if (repeat === 0) return;
+                }
+                setTimeout(titleMove, 150); // Ajusta la velocidad aquí
+            }
+    
+            if (title) titleMove();
+        });
+    </script>
+    
 </head>
 <body>
     <div id="background"></div>
@@ -51,27 +54,31 @@
 
 <section id="projects">
     <h2>Proyectos</h2>
-    <p>Selecciona una categoría del menú desplegable.</p>
+    <p></p>
 </section>
 
 <section id="certifications">
     <h2>Certificaciones</h2>
-    <p>Metodología y estudio.</p>
+    <br>
+    <h3>Metodología y estudio.</h3>
 </section>
 
 <section id="reviews">
     <h2>Reviews</h2>
-    <p>Reseñas sobre mis certificaciones.</p>
+    <br>
+    <h3>Reseñas sobre mis certificaciones.</h3>
 </section>
 
 <section id="ctfs">
     <h2>CTFs</h2>
-    <p>Información sobre retos CTF completados y writeups.</p>
+    <h3>Información sobre retos CTF completados y writeups.</h3>
 </section>
 
 <section id="contact">
     <h2>Contacto</h2>
-    <p>Información de contacto.</p>
+    <br/>
+    <h3>Información de contacto.</h3>
+    <br>
     <a href="https://www.linkedin.com/in/miguel-%C3%A1ngel-povea-ram%C3%ADrez/" target="_blank"> LinkedIn </a>
 </section>
 
